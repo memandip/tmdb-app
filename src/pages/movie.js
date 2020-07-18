@@ -68,7 +68,7 @@ export default class Movie extends Component {
                                     ))}
                                 </Card.Text>
 
-                                ({movie.budget && movie.budget > 0) ? (
+                                {(movie.budget && movie.budget > 0) ? (
                                     <Card.Text>
                                         <strong>Budget:&nbsp;</strong>
                                         {movie.budget} USD
