@@ -40,8 +40,8 @@ export default class Movie extends Component {
         let { loading, movie } = this.state
         return (
             <div>
-                {loading && <Loading />}
-                {!loading && movie && (
+                {loading ? <Loading /> : ''}
+                {(!loading && movie) ? (
                     <>
                         <h4 className='mt-10'>
                             {movie.original_title}&nbsp;
@@ -50,8 +50,8 @@ export default class Movie extends Component {
                         </h4>
                         <hr />
                         <Card id={movie.id}>
-                            {(movie.backdrop_path || movie.poster_path) &&
-                                <Card.Img variant="top" src={getTmdbImageLink(movie.backdrop_path || movie.poster_path)} />}
+                            {(movie.backdrop_path || movie.poster_path) ?
+                                <Card.Img variant="top" src={getTmdbImageLink(movie.backdrop_path || movie.poster_path)} /> : ''}
                             <Card.Body>
 
                                 <Card.Text>
@@ -68,19 +68,18 @@ export default class Movie extends Component {
                                     ))}
                                 </Card.Text>
 
-                                {movie.budget && movie.budget > 0 && (
+                                ({movie.budget && movie.budget > 0) ? (
                                     <Card.Text>
                                         <strong>Budget:&nbsp;</strong>
                                         {movie.budget} USD
                                     </Card.Text>
-                                )}
-
-                                {movie.revenue && movie.revenue > 0 && (
+                                ) : ''}
+                                {(movie.revenue && movie.revenue > 0) ? (
                                     <Card.Text>
                                         <strong>Box Office:&nbsp;</strong>
                                         {movie.revenue} USD
                                     </Card.Text>
-                                )}
+                                ) : ''}
 
                                 <Card.Text>
                                     <strong>Release Date:&nbsp;</strong>
@@ -110,7 +109,7 @@ export default class Movie extends Component {
                                 <CardColumns>
                                     {movie.production_companies.map(p => (
                                         <Card key={p.id}>
-                                            {p.logo_path && <Card.Img variant="top" src={getTmdbImageLink(p.logo_path)} style={{ padding: '15px' }} />}
+                                            {p.logo_path ? <Card.Img variant="top" src={getTmdbImageLink(p.logo_path)} style={{ padding: '15px' }} /> : ''}
                                             <Card.Body>
                                                 <Card.Title>{p.name}</Card.Title>
                                             </Card.Body>
@@ -120,7 +119,7 @@ export default class Movie extends Component {
                             </Card.Body>
                         </Card>
                     </>
-                )}
+                ) : ''}
             </div>
         )
     }
