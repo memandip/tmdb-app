@@ -4,6 +4,7 @@ import { movieListGenreApiUrl } from '../CONSTS'
 import { getTmdbImageLink } from '../helpers'
 import { Card, CardColumns } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default class Genre extends Component {
 
@@ -49,7 +50,7 @@ export default class Genre extends Component {
     render() {
         return (
             <div>
-                <h4 style={{ marginTop: '10px' }}>Movies by genre</h4>
+                <h4 style={{ marginTop: '10px' }}>Movies By {this.props.selectedGenre} Genre</h4>
                 <hr />
                 {this.state.loading && <Loading />}
                 <CardColumns>
@@ -69,4 +70,8 @@ export default class Genre extends Component {
             </div>
         )
     }
+}
+
+Genre.propTypes = {
+    selectedGenre: PropTypes.string.isRequired
 }

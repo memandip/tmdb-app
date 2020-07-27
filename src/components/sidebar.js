@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import {Nav} from "react-bootstrap"
-import {NavLink} from 'react-router-dom'
+import { Nav} from "react-bootstrap"
+import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { genreListApiUrl } from '../CONSTS'
 
 export default class Sidebar extends Component {
@@ -9,10 +10,17 @@ export default class Sidebar extends Component {
     }
 
     componentDidMount() {
+        let pathname = window.location.pathname || '',
+            genreId = pathname.replace(/[^0-9]/g,'')
+
         fetch(genreListApiUrl)
             .then(res => res.json())
             .then(({ genres }) => {
                 this.setState({ genres })
+                if(genreId){
+                    let selectedGenre = genres.filter(g => g.id === genreId)
+                    if(selectedGenre.length) this.props.setGenre(selectedGenre[0].name)
+                }
             })
             .catch(err => {
                 console.log('err', err)
@@ -28,7 +36,7 @@ export default class Sidebar extends Component {
                     <div className="sidebar-sticky"></div>
                     <h4 className='heading'>Genres</h4>
                     {this.state.genres.map(g => (
-                        <Nav.Item key={g.id}>
+                        <Nav.Item key={g.id} onClick={() => this.props.setGenre(g.name)}>
                             <NavLink to={`/genre/${g.id}`}>{g.name}</NavLink>
                         </Nav.Item>
                     ))}
@@ -36,4 +44,8 @@ export default class Sidebar extends Component {
             </div>
         )
     }
+}
+
+Sidebar.propTypes = {
+    setGenre: PropTypes.func.isRequired
 }
