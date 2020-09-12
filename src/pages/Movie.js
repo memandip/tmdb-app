@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Loading } from '../components/loading'
+import { Loading } from '../components/Loading'
 import { movieDetailApiLink } from '../CONSTS'
 import { Card, CardColumns } from 'react-bootstrap'
-import { getTmdbImageLink } from '../helpers'
+import { getTmdbImageLink, getTmdbImageLinkFromMovie } from '../helpers'
+import MovieCard from '../components/partials/MovieCard'
 
 export default class Movie extends Component {
 
@@ -22,7 +23,7 @@ export default class Movie extends Component {
         await fetch(url)
             .then(res => res.json())
             .then(data => {
-                this.setState({ movie: data })
+                if(! data.status_code) this.setState({ movie: data })
             })
             .catch(err => {
                 console.log(err)
@@ -41,27 +42,20 @@ export default class Movie extends Component {
         return (
             <div>
                 {loading ? <Loading /> : ''}
-                {(!loading && movie) ? (
-                    <>
-                        <h4 className='mt-10'>
-                            {movie.original_title}&nbsp;
-                            |
-                            &nbsp;{movie.tagline}
-                        </h4>
-                        <hr />
-                        <Card id={movie.id}>
-                            {(movie.backdrop_path || movie.poster_path) ?
-                                <Card.Img variant="top" src={getTmdbImageLink(movie.backdrop_path || movie.poster_path)} /> : ''}
-                            <Card.Body>
-
-                                <Card.Text>
-                                    <strong>Overview:</strong>&nbsp; {movie.overview}
-                                </Card.Text>
+                {(!loading && movie && !movie.status_code) && (
+                    <MovieCard isDetailPage={true} 
+                            title={movie.original_title}
+                            image={getTmdbImageLinkFromMovie(movie)}
+                            text={movie.overview}
+                            tagline={movie.tagline}
+                            className='detail-page'
+                            >
 
                                 <Card.Text>
                                     <strong>Genres:</strong>
                                     {movie.genres.map(({ name }) => (
                                         <>
+                                            &nbsp;
                                             <span className='badge badge-pill badge-success'>{name}</span>
                                             &nbsp;
                                         </>
@@ -116,10 +110,8 @@ export default class Movie extends Component {
                                         </Card>
                                     ))}
                                 </CardColumns>
-                            </Card.Body>
-                        </Card>
-                    </>
-                ) : ''}
+                    </MovieCard>
+                )}
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col, } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Sidebar from "./sidebar.js"
+import Sidebar from "./Sidebar.js"
 
 const Dashboard = props => (
     <Container fluid>

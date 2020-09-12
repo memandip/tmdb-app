@@ -4,14 +4,18 @@ import './App.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
+import { DataLayer } from './DataLayer'
+import reducer, { initialState } from './reducers'
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
-  document.getElementById('root')
+	<DataLayer initialState={initialState} reducer={reducer}>
+		<Router>
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		</Router>
+	</DataLayer>,
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
