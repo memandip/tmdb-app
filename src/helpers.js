@@ -4,6 +4,6 @@ export function getTmdbImageLink(image) {
 }
 
 export function getTmdbImageLinkFromMovie(movie) {
-    if(! movie.backdrop_path && movie.poster_path) return ''
+    if(! movie.backdrop_path && ! movie.poster_path) return ''
     return getTmdbImageLink(movie.backdrop_path || movie.poster_path)
 }

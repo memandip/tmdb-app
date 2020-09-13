@@ -19,6 +19,7 @@
 }
 
 #sidebar-wrapper>div {
+  font-weight: bold;
   height: 100vh;
   overflow: hidden auto;
   /* overflow-x: hidden; */
@@ -28,6 +29,10 @@
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
+}
+
+#sidebar-wrapper h4{
+  margin-top: 5px;
 }
 
 #page-content-wrapper {
@@ -44,3 +49,32 @@ body {
 .mt-10 {
   margin-top: 10px;
 }
+
+.no-border {
+  border: none !important;
+}
+
+.detail-page{
+  margin: 10px auto;
+}
+
+#root{
+  background-size: 100% 100%;
+  background-attachment: contain;
+  background-repeat: no-repeat;
+}
+
+#root.detail-page-image .detail-page.card{
+  opacity: .7;
+  font-weight: bold;
+  border-radius: 0 !important;
+}
+
+#root.detail-page-image #sidebar-wrapper{
+  opacity: .5;
+}
+
+/* #root.detail-page-image{
+  z-index: 1;
+  opacity: 0.5;
+} */

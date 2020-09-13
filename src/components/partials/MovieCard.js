@@ -13,7 +13,6 @@ const MovieCard = ({ id, title, tagline, image, text, className, isDetailPage = 
                     |
                     &nbsp;{tagline}
                     </h4>
-                    <hr />
                 </>
             )}
             {image && <Card.Img variant="top" src={image} />}

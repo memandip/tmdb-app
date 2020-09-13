@@ -44,18 +44,16 @@ export default function Sidebar() {
     }
 
     return (
-        <div>
-            <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-                activeKey="/"
-            >
-                <div className="sidebar-sticky"></div>
-                <h4 className='heading'>Genres</h4>
-                {genres.map(g => (
-                    <Nav.Item key={g.id} onClick={() => handleClick(g)}>
-                        <NavLink to={`/genre/${g.id}`}>{g.name}</NavLink>
-                    </Nav.Item>
-                ))}
-            </Nav>
-        </div>
+        <Nav className="d-md-block bg-light"
+            activeKey="/"
+        >
+            <div className="sidebar-sticky"></div>
+            <h4 className='heading'>Genres</h4>
+            {genres.map(g => (
+                <Nav.Item key={g.id} onClick={() => handleClick(g)}>
+                    <NavLink to={`/genre/${g.id}`}>{g.name}</NavLink>
+                </Nav.Item>
+            ))}
+        </Nav>
     )
 }
