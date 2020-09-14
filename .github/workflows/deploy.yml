@@ -10,17 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x]
     steps:
       - uses: actions/checkout@v2
       - name: User Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install Packages
-        run: npm install
-      - name: Build Packages
-        run: npm build
+      - run: npm install
+      - run: npm build
       - name: Deploy to gh-pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
