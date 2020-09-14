@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Row } from 'react-bootstrap'
 import { Loading } from '../components/Loading'
 import { movieListGenreApiUrl } from '../CONSTS'
 import { getTmdbImageLink } from '../helpers'
 import { CardColumns } from 'react-bootstrap'
 import MovieCard from '../components/partials/MovieCard'
 import { useDataLayer } from '../DataLayer'
-import { SET_MOVIES, SET_SELECTED_GENRE } from '../reducers/actions'
+import { SET_MOVIES } from '../reducers/actions'
 
 export default function Genre(props) {
 
