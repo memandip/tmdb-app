@@ -1,4 +1,5 @@
-kname: Deployment
+name: Deployment
+
 on:
   push:
     branches:
