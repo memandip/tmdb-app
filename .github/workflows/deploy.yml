@@ -21,7 +21,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Build Packages
-        run: npm run build
+        run: npm run-script build
       - name: Deploy to gh-pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
