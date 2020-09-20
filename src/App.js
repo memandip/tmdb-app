@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 import { Loading } from './components/Loading'
 import { Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,11 +17,13 @@ function App() {
 					<Sidebar />
 				</Col>
 				<Col xs={10} id="page-content-wrapper">
-					<Switch>
-						<Route exact={true} path="/" component={() => <h1 className='mt-10'>Select Genre</h1>} />
-						<Route exact={true} path="/genre/:id" render={props => <Genre {...props} />} />
-						<Route exact={true} path="/movie/:id" component={Movie} />
-					</Switch>
+					<Router>
+						<Switch>
+							<Route exact={true} path="/" component={() => <h1 className='mt-10'>Select Genre</h1>} />
+							<Route exact={true} path="/genre/:id" render={props => <Genre {...props} />} />
+							<Route exact={true} path="/movie/:id" component={Movie} />
+						</Switch>
+					</Router>
 				</Col>
 			</Row>
 		</ React.Suspense>
