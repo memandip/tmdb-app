@@ -1,4 +1,4 @@
-export const tmdbApiKey = 'f65860a1b8c602d5378965d9c1a78d1c'
+export const tmdbApiKey = process.env.REACT_APP_TMDB_API_KEY
 
 export const tmdbApiUrl = 'https://api.themoviedb.org/3'
 

@@ -9,7 +9,6 @@ const Genre = React.lazy(() => import('./pages/Genre'))
 const Movie = React.lazy(() => import('./pages/Movie'))
 
 function App() {
-
 	return (
 		<React.Suspense fallback={<Loading />}>
 			<Row>
@@ -17,13 +16,11 @@ function App() {
 					<Sidebar />
 				</Col>
 				<Col xs={10} id="page-content-wrapper">
-					<Router>
-						<Switch>
-							<Route exact={true} path="/" component={() => <h1 className='mt-10'>Select Genre</h1>} />
-							<Route exact={true} path="/genre/:id" render={props => <Genre {...props} />} />
-							<Route exact={true} path="/movie/:id" component={Movie} />
-						</Switch>
-					</Router>
+					<Switch>
+						<Route exact={true} path="/" component={() => <h1 className='mt-10'>Select Genre </h1>} />
+						<Route exact={true} path="/genre/:id" render={props => <Genre {...props} />} />
+						<Route exact={true} path="/movie/:id" component={Movie} />
+					</Switch>
 				</Col>
 			</Row>
 		</ React.Suspense>

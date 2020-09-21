@@ -41,6 +41,7 @@ export default function Sidebar() {
     const handleClick = g => {
         dispatch({ type: actions.SET_SELECTED_GENRE, payload: g.id })
         dispatch({ type: actions.SET_SELECTED_GENRE_NAME, payload: g.name })
+        dispatch({ type: actions.SET_MOVIES, payload: []})
     }
 
     return (
