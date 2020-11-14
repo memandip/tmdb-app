@@ -1,0 +1,6 @@
+{
+  "projectId": "n44zad",
+  "fixturesFolder": "cypress/fixtures",
+  "integrationFolder": "cypress/integration",
+  "screenshotsFolder": "cypress/screenshots"
+}

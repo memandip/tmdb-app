@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Loading } from './components/Loading'
 import { Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'

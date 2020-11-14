@@ -1,0 +1,7 @@
+{
+  "page": {
+    "genre": {
+      "load_more_btn": ".load-more-btn"
+    }
+  }
+}

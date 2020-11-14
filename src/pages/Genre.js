@@ -80,6 +80,7 @@ export default function Genre(props) {
                             margin: '10px auto',
                             fontSize: '15px'
                         }}
+                        className="load-more-btn"
                         onClick={() => fetchMovies(page + 1)}>Load More</Button>
                 </Row>
             )}
