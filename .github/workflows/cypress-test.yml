@@ -9,9 +9,10 @@ jobs:
     name: E2E testing on Chrome
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
+          check-latest: 'true'
         env:  
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - run: npm install
