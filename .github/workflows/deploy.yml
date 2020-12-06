@@ -1,15 +1,8 @@
-
 name: Deploy TMDB App
 
 on:
   push:
     branches:
-    - dev
-    - master
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-    - master
     - dev
 
 jobs:
@@ -17,15 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v1.1.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
         with:
-          version:  10.x
-          
-      - name: Checkout branch
-        uses: actions/checkout@v2
-
-      - name: Clean install dependencies
+          node-version: '12'
+          check-latest: 'true'
+        env:  
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      - name: Npm install
         run: npm ci
       
       - name: Build 
