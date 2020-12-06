@@ -16,8 +16,8 @@ jobs:
         env:  
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - run: npm install
-      - name: Npm install and build
-        run: npm install && npm run build
+      - name: Npm install
+        run: npm ci
       - name: Start dev server
         run: npm start    
       - name: Cypress run
