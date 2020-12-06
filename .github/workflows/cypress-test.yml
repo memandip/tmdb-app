@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '12'
         env:  
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - run: npm install
       - name: Npm install and build
         run: npm ci && npm run build
