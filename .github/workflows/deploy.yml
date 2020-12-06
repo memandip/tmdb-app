@@ -1,15 +1,13 @@
-
 name: Deploy TMDB App
-
 on:
   push:
     branches:
     - dev
-    - master
+    # - master
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-    - master
+    # - master
     - dev
 
 jobs:

@@ -1,0 +1,24 @@
+name: E2E testing in chrome with Cypress
+on:
+  push:
+    branches:
+    - cypress-test
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    name: E2E testing on Chrome
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1.1.0
+        with:
+          version:  12.x
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Npm install and build
+        run: npm ci && npm run build
+      - name: Start dev server
+        run: npm start    
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+            browser: chrome  
