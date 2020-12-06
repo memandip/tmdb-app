@@ -8,12 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     name: E2E testing on Chrome
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v1.1.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          version:  12.x
-      - name: Checkout
-        uses: actions/checkout@v2
+          node-version: '12'
+      - run: npm install
       - name: Npm install and build
         run: npm ci && npm run build
       - name: Start dev server
@@ -21,4 +20,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-            browser: chrome  
+          browser: chrome  
