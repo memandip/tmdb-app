@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+/* eslint-disable */
+const resolveNestedProperty = (path, obj) => (
+    path.split('.').reduce((prev, curr) => prev ? prev[curr] : null, obj || self)
+)
+
+Cypress.Commands.add('getElement', function (elementPath, cyGetOptions = {}) {
+    cy.fixture("htmlElements.json")
+        .then(elements => {
+            const element = resolveNestedProperty(elementPath, elements)
+            return cy.get(element, cyGetOptions)
+        })
+})
