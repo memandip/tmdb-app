@@ -1,0 +1,25 @@
+# name: E2E testing in chrome with Cypress
+# on:
+#   push:
+#     branches:
+#     - cypress-test
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
+#     name: E2E testing on Chrome
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v2-beta
+#         with:
+#           node-version: '12'
+#           check-latest: 'true'
+#         env:  
+#           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+#       - name: Npm install
+#         run: npm ci
+#       - name: Start dev server
+#         run: npm start    
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v2
+#         with:
+#           browser: chrome  

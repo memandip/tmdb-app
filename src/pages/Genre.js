@@ -54,7 +54,7 @@ export default function Genre(props) {
 
         setLoading(false)
     }
-
+    
     return (
         <div>
             <h4 style={{ marginTop: '10px' }}>Movies By {selectedGenreName} Genre</h4>
@@ -75,11 +75,13 @@ export default function Genre(props) {
             {!loading && totalPages > 1 && page < totalPages && (
                 <Row>
                     <Button variant="outline-dark"
+                        data-genre-id={selectedGenre}
                         style={{
                             borderRadius: 0,
                             margin: '10px auto',
                             fontSize: '15px'
                         }}
+                        className="load-more-btn"
                         onClick={() => fetchMovies(page + 1)}>Load More</Button>
                 </Row>
             )}

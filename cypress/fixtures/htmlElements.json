@@ -1,0 +1,16 @@
+{
+	"common":{
+		"sidebar":{
+			"wrapper":"#sidebar-wrapper",
+			"navItem":".nav-item > a"
+		}
+	},
+	"pages": {
+		"genre": {
+			"url": "/genre",
+			"load_more_btn": ".load-more-btn",
+			"card":".genre-page.card",
+			"movie_anchor_tag":".genre_card a"
+		}
+	}
+}

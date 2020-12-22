@@ -1,0 +1,106 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/jeAQdDX9nguP6YOX6QSWKDPkbBo.jpg",
+            "genre_ids": [
+                28,
+                14,
+                878
+            ],
+            "id": 590706,
+            "original_language": "en",
+            "original_title": "Jiu Jitsu",
+            "overview": "Every six years, an ancient order of jiu-jitsu fighters joins forces to battle a vicious race of alien invaders. But when a celebrated war hero goes down in defeat, the fate of the planet and mankind hangs in the balance.",
+            "popularity": 1569.192,
+            "poster_path": "/eLT8Cu357VOwBVTitkmlDEg32Fs.jpg",
+            "release_date": "2020-11-20",
+            "title": "Jiu Jitsu",
+            "video": false,
+            "vote_average": 5.6,
+            "vote_count": 180
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/wzJRB4MKi3yK138bJyuL9nx47y6.jpg",
+            "genre_ids": [
+                28,
+                53,
+                878
+            ],
+            "id": 577922,
+            "original_language": "en",
+            "original_title": "Tenet",
+            "overview": "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+            "popularity": 1966.31,
+            "poster_path": "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
+            "release_date": "2020-08-22",
+            "title": "Tenet",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 3099
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ckfwfLkl0CkafTasoRw5FILhZAS.jpg",
+            "genre_ids": [
+                28,
+                35,
+                14
+            ],
+            "id": 602211,
+            "original_language": "en",
+            "original_title": "Fatman",
+            "overview": "A rowdy, unorthodox Santa Claus is fighting to save his declining business. Meanwhile, Billy, a neglected and precocious 12 year old, hires a hit man to kill Santa after receiving a lump of coal in his stocking.",
+            "popularity": 1279.392,
+            "poster_path": "/4n8QNNdk4BOX9Dslfbz5Dy6j1HK.jpg",
+            "release_date": "2020-11-13",
+            "title": "Fatman",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 200
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/srYya1ZlI97Au4jUYAktDe3avyA.jpg",
+            "genre_ids": [
+                14,
+                28,
+                12
+            ],
+            "id": 464052,
+            "original_language": "en",
+            "original_title": "Wonder Woman 1984",
+            "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
+            "popularity": 1108.499,
+            "poster_path": "/di1bCAfGoJ0BzNEavLsPyxQ2AaB.jpg",
+            "release_date": "2020-12-16",
+            "title": "Wonder Woman 1984",
+            "video": false,
+            "vote_average": 7.1,
+            "vote_count": 87
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2Fk3AB8E9dYIBc2ywJkxk8BTyhc.jpg",
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 524047,
+            "original_language": "en",
+            "original_title": "Greenland",
+            "overview": "John Garrity, his estranged wife and their young son embark on a perilous journey to find sanctuary as a planet-killing comet hurtles toward Earth. Amid terrifying accounts of cities getting levelled, the Garrity's experience the best and worst in humanity. As the countdown to the global apocalypse approaches zero, their incredible trek culminates in a desperate and last-minute flight to a possible safe haven.",
+            "popularity": 1374.008,
+            "poster_path": "/bNo2mcvSwIvnx8K6y1euAc1TLVq.jpg",
+            "release_date": "2020-07-29",
+            "title": "Greenland",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 1020
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 5
+}
